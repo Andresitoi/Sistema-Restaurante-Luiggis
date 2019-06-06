@@ -18,6 +18,8 @@ class CreateProductoTerminadoTable extends Migration
             $table->string('nombre',30);
             $table->decimal('precio',12,2);
             $table->timestamps();
+            $table->charset='utf8mb4';
+            $table->collation='utf8mb4_spanish_ci';
         });
     }
 

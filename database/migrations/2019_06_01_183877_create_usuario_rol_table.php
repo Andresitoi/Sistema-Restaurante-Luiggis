@@ -18,14 +18,14 @@ class CreateUsuarioRolTable extends Migration
             $table->unsignedInteger('rol_id');
             $table->unsignedInteger('usuario_id');
             $table->boolean('estado');
+            
+            $table->charset='utf8mb4';
+            $table->collation='utf8mb4_spanish_ci';
 
             //asociado a la tabla rol(id)
-            $table->foreign('rol_id','fk_usuariorol_rol')
-            ->references('id')->on('rol')->onDelete('restrict')->onUpdate('restrict');
-
+            $table->foreign('rol_id','fk_usuariorol_rol')->references('id')->on('rol')->onDelete('restrict')->onUpdate('restrict');
             //asociado a la tabla usuario(id)
-            $table->foreign('usuario_id','fk_usuariorol_usuario')
-            ->references('id')->on('usuario')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('usuario_id','fk_usuariorol_usuario')->references('id')->on('usuario')->onDelete('restrict')->onUpdate('restrict');
             
             $table->timestamps();
         });

@@ -22,14 +22,13 @@ class CreateDetallePromocionTable extends Migration
             $table->primary(['cod_produtoterminado','id_promocion']);
 
             //asociado a la tabla producto_terminado(id)
-            $table->foreign('cod_produtoterminado','fk_codprodterminado_dpromocion')
-            ->references('codigo')->on('producto_terminado')->onUpdate('cascade')->onDelete('cascade');
-            
+            $table->foreign('cod_produtoterminado','fk_codprodterminado_dpromocion')->references('codigo')->on('producto_terminado')->onUpdate('cascade')->onDelete('cascade');
             //asociado a la tabla promocion(id)
-            $table->foreign('id_promocion','fk_idpromoc_detpromocion')
-            ->references('id')->on('promocion')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id_promocion','fk_idpromoc_detpromocion')->references('id')->on('promocion')->onUpdate('cascade')->onDelete('cascade');
 
             $table->timestamps();
+            $table->charset='utf8mb4';
+            $table->collation='utf8mb4_spanish_ci';
         });
     }
 

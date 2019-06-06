@@ -18,6 +18,8 @@ class CreateSucursalTable extends Migration
             $table->string('direccion',50);
             $table->integer('telefono');
             $table->timestamps();
+            $table->charset='utf8mb4';
+            $table->collation='utf8mb4_spanish_ci';
         });
     }
 

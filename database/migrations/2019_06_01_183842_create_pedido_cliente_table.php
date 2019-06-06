@@ -21,15 +21,15 @@ class CreatePedidoClienteTable extends Migration
             $table->integer('ci_empleado');
 
             //asociado a la tabla cliente(ci)
-            $table->foreign('ci_cliente','fk_cicliente_pedidocliente')
-            ->references('nit')->on('cliente')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('ci_cliente','fk_cicliente_pedidocliente')->references('nit')->on('cliente')->onDelete('cascade')->onUpdate('cascade');
 
 
             //asociado a la tabla empleado(ci)
-            $table->foreign('ci_empleado','fk_ciempleado_pedidocliente')
-            ->references('ci')->on('empleado')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('ci_empleado','fk_ciempleado_pedidocliente')->references('ci')->on('empleado')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
+            $table->charset='utf8mb4';
+            $table->collation='utf8mb4_spanish_ci';
         });
     }
 

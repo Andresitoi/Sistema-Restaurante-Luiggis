@@ -21,14 +21,14 @@ class CreateIngredienteProductoTable extends Migration
             $table->primary(['cod_productoterminado','id_insumo']);
 
             //asociado a la tabla productoterminado(codigo)
-            $table->foreign('cod_productoterminado','fk_idproductoterminado_factura')
-            ->references('codigo')->on('producto_terminado')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('cod_productoterminado','fk_idproductoterminado_factura')->references('codigo')->on('producto_terminado')->onDelete('cascade')->onUpdate('cascade');
             
             //asociado a la tabla insumo(id)
-            $table->foreign('id_insumo','fk_idinsumo_factura')
-            ->references('id')->on('insumo')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_insumo','fk_idinsumo_factura')->references('id')->on('insumo')->onDelete('cascade')->onUpdate('cascade');
             
             $table->timestamps();
+            $table->charset='utf8mb4';
+            $table->collation='utf8mb4_spanish_ci';
         });
     }
 

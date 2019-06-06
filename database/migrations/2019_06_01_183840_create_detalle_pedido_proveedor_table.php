@@ -23,13 +23,13 @@ class CreateDetallePedidoProveedorTable extends Migration
             $table->primary(['id_insumo','nro_pedidoproveedor']);
 
             //asociado a la tabla pedido_proveedor(id)
-            $table->foreign('nro_pedidoproveedor','fk_nropedidoproveedor_detallepp')
-            ->references('nro')->on('pedido_proveedor')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('nro_pedidoproveedor','fk_nropedidoproveedor_detallepp')->references('nro')->on('pedido_proveedor')->onDelete('cascade')->onUpdate('cascade');
             //asociado a la tabla insumo(id)
-            $table->foreign('id_insumo','fk_idinsumo_detallepp')
-            ->references('id')->on('insumo')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_insumo','fk_idinsumo_detallepp')->references('id')->on('insumo')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
+            $table->charset='utf8mb4';
+            $table->collation='utf8mb4_spanish_ci';
         });
     }
 

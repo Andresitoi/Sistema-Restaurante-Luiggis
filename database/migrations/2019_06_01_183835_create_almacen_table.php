@@ -17,12 +17,13 @@ class CreateAlmacenTable extends Migration
             $table->integer('codigo')->primary();
             $table->string('descripcion',50);
             $table->integer('id_sucursal');
+            $table->timestamps();
+            $table->charset='utf8mb4';
+            $table->collation='utf8mb4_spanish_ci';
 
             //asociada a la tabla sucursal(id)
-            $table->foreign('id_sucursal','fk_almacen_sucursal')
-            ->references('id')->on('sucursal')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('id_sucursal','fk_almacen_sucursal')->references('id')->on('sucursal')->onDelete('restrict')->onUpdate('restrict');
 
-            $table->timestamps();
         });
     }
 

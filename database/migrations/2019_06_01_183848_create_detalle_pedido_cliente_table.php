@@ -22,18 +22,15 @@ class CreateDetallePedidoClienteTable extends Migration
             $table->primary(['nro_pcliente','cod_pterminado']);
 
             //asociado a la tabla pedido_cliente(codigo)
-            $table->foreign('nro_pcliente','fk_nro_pcliente_detalle')
-            ->references('nro')->on('pedido_cliente')->onUpdate('cascade')->onDelete('cascade');
-            
+            $table->foreign('nro_pcliente','fk_nro_pcliente_detalle')->references('nro')->on('pedido_cliente')->onUpdate('cascade')->onDelete('cascade');
             //asociado a la tabla producto_terminado(codigo)
-            $table->foreign('cod_pterminado','fk_cod_pterminado_detalle')
-            ->references('codigo')->on('producto_terminado')->onUpdate('cascade')->onDelete('cascade');
-
+            $table->foreign('cod_pterminado','fk_cod_pterminado_detalle')->references('codigo')->on('producto_terminado')->onUpdate('cascade')->onDelete('cascade');
             //asociado a la tabla tipo_pedido(id)
-            $table->foreign('id_tipopedido','fk_idtipopedido_detalle')
-            ->references('id')->on('tipo_pedido')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id_tipopedido','fk_idtipopedido_detalle')->references('id')->on('tipo_pedido')->onUpdate('cascade')->onDelete('cascade');
 
             $table->timestamps();
+            $table->charset='utf8mb4';
+            $table->collation='utf8mb4_spanish_ci';
         });
     }
 

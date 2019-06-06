@@ -21,14 +21,14 @@ class CreateComboTable extends Migration
             $table->primary(['cod_producto_A','cod_producto_B']);
 
             //asociado a la tabla producto_combo(codigo)
-            $table->foreign('cod_producto_A','fk_comboa_codproductoterminado')
-            ->references('codigo')->on('producto_terminado')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('cod_producto_A','fk_comboa_codproductoterminado')->references('codigo')->on('producto_terminado')->onUpdate('cascade')->onDelete('cascade');
 
             //asociado a la tabla producto_combo(codigo)
-            $table->foreign('cod_producto_B','fk_combob_codproductoterminado')
-            ->references('codigo')->on('producto_terminado')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('cod_producto_B','fk_combob_codproductoterminado')->references('codigo')->on('producto_terminado')->onUpdate('cascade')->onDelete('cascade');
 
             $table->timestamps();
+            $table->charset='utf8mb4';
+            $table->collation='utf8mb4_spanish_ci';
         });
     }
 

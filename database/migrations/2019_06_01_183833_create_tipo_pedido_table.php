@@ -16,8 +16,9 @@ class CreateTipoPedidoTable extends Migration
         Schema::create('tipo_pedido', function (Blueprint $table) {
             $table->integer('id')->primary();
             $table->string('descripcion',10);
-            
             $table->timestamps();
+            $table->charset='utf8mb4';
+            $table->collation='utf8mb4_spanish_ci';
         });
     }
 

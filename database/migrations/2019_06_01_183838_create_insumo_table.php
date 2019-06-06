@@ -20,10 +20,11 @@ class CreateInsumoTable extends Migration
             $table->integer('id_unidadmedida');
 
             //asociado a la tabla unidad_medida(id)
-            $table->foreign('id_unidadmedida','fk_insumo_unidadmedida')
-            ->references('id')->on('unidad_medida')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_unidadmedida','fk_insumo_unidadmedida')->references('id')->on('unidad_medida')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
+            $table->charset='utf8mb4';
+            $table->collation='utf8mb4_spanish_ci';
         });
     }
 

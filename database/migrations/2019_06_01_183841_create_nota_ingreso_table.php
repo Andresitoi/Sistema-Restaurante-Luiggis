@@ -20,14 +20,14 @@ class CreateNotaIngresoTable extends Migration
             $table->integer('cod_almacen');
 
             //asociado a la tabla proveedor(ci)
-            $table->foreign('ci_proveedor','fk_ciproveedor_notaingreso')
-            ->references('ci')->on('proveedor')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('ci_proveedor','fk_ciproveedor_notaingreso')->references('ci')->on('proveedor')->onDelete('cascade')->onUpdate('cascade');
             
             //asociado a la tabla almacen(cod)
-            $table->foreign('cod_almacen','fk_codalmacen_notaingreso')
-            ->references('codigo')->on('almacen')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('cod_almacen','fk_codalmacen_notaingreso')->references('codigo')->on('almacen')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
+            $table->charset='utf8mb4';
+            $table->collation='utf8mb4_spanish_ci';
         });
     }
 

@@ -21,6 +21,8 @@ class CreatePersonaTable extends Migration
             $table->string('direccion',100)->nullable();
             $table->char('estado');
             $table->timestamps();
+            $table->charset='utf8mb4';
+            $table->collation='utf8mb4_spanish_ci';
         });
     }
 

@@ -22,10 +22,11 @@ class CreateDetalleBitacoraTable extends Migration
             $table->primary(['id','id_bitacora']);
 
             //asociado a la tabla bitacora(id)
-            $table->foreign('id_bitacora','fk_idbitacora_detallebitacora')
-            ->references('id')->on('bitacora')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_bitacora','fk_idbitacora_detallebitacora')->references('id')->on('bitacora')->onDelete('cascade')->onUpdate('cascade');
             
             $table->timestamps();
+            $table->charset='utf8mb4';
+            $table->collation='utf8mb4_spanish_ci';
         });
     }
 

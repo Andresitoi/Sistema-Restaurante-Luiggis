@@ -20,13 +20,13 @@ class CreateCantidadInsumoAlmacenTable extends Migration
             $table->primary(['cod_almacen','id_insumo']);
 
             //asociado a la tabla almacen(codigo)
-            $table->foreign('cod_almacen','fk_cantinsumoalmacen_sucursal')
-            ->references('codigo')->on('almacen')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('cod_almacen','fk_cantinsumoalmacen_sucursal')->references('codigo')->on('almacen')->onDelete('restrict')->onUpdate('restrict');
             //asociado a la tabla insumo(id)
-            $table->foreign('id_insumo','fk_cantinsumoalmacen_insumo')
-            ->references('id')->on('insumo')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('id_insumo','fk_cantinsumoalmacen_insumo')->references('id')->on('insumo')->onDelete('restrict')->onUpdate('restrict');
 
             $table->timestamps();
+            $table->charset='utf8mb4';
+            $table->collation='utf8mb4_spanish_ci';
         });
     }
 

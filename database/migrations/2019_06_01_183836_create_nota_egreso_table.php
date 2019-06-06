@@ -18,12 +18,13 @@ class CreateNotaEgresoTable extends Migration
             $table->date('fecha');
             $table->string('descripcion',100);
             $table->integer('cod_almacen');
+            $table->timestamps();
+            $table->charset='utf8mb4';
+            $table->collation='utf8mb4_spanish_ci';
 
             //asociada a la tabla almacen(codigo)
-            $table->foreign('cod_almacen','fk_codigoalmacen_notaegreso')
-            ->references('codigo')->on('almacen')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('cod_almacen','fk_codigoalmacen_notaegreso')->references('codigo')->on('almacen')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->timestamps();
         });
     }
 

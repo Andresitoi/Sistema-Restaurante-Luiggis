@@ -20,10 +20,11 @@ class CreateDetalleEgresoTable extends Migration
             $table->integer('id_notaegreso');
             
             //asociado a la tabla nota egreso(id)
-            $table->foreign('id_notaegreso','fk_idnotaegreso_detallegreso')
-            ->references('id')->on('nota_egreso')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_notaegreso','fk_idnotaegreso_detallegreso')->references('id')->on('nota_egreso')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
+            $table->charset='utf8mb4';
+            $table->collation='utf8mb4_spanish_ci';
         });
     }
 
