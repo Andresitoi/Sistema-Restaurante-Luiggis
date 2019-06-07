@@ -18,6 +18,7 @@
         folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{asset("assets/$theme/dist/css/skins/_all-skins.min.css")}}">
 
+    @yield("styles")
     
     <link rel="stylesheet" href="{{asset("assets/css/custom.css")}}">
 
@@ -28,7 +29,6 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    @yield("styles")
 
 
     <!-- Google Font -->
@@ -66,6 +66,8 @@
         <!-- AdminLTE App -->
         <script src="{{asset("assets/$theme/dist/js/adminlte.min.js")}}"></script>
         <!-- AdminLTE for demo purposes -->
+
+        @yield("scriptsPlugins")
         <script src="{{asset("assets/js/jquery-validation/jquery.validate.min.js")}}"></script>
         <script src="{{asset("assets/js/jquery-validation/localization/messages_es.min.js")}}"></script>
         <script src="{{asset("assets/js/funciones.js")}}"></script>

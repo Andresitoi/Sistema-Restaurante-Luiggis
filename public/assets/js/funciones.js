@@ -33,7 +33,7 @@ var Restaurante = function(){
 
                 },
                 submitHandler: function(form){
-
+                    return true;
                 }
             });
         },
