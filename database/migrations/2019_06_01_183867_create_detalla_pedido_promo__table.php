@@ -20,7 +20,7 @@ class CreateDetallaPedidoPromoTable extends Migration
             $table->integer('cantidad');
 
             //llaves primarias
-            $table->primary(['id_promocion','nro_pedidocliente']);
+            $table->primary(['id_promocion','nro_pedidocliente','id_tipopedido']);
 
             //asociado a la tabla promocion(id)
             $table->foreign('id_promocion','fk_iddetallapromocion_detallep')->references('id')->on('promocion')->onUpdate('cascade')->onDelete('cascade');
