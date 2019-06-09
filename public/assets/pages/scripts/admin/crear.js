@@ -1,3 +1,3 @@
 $(document).ready(function(){
-    Restaurant.validacionGeneral('form-general');
+    Restaurante.validacionGeneral('form-general');
 })
