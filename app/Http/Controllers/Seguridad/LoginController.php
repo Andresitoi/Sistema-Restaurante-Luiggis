@@ -21,11 +21,7 @@ class LoginController extends Controller
     {
         return view('seguridad.index');
     }
-
-    public function username()
-    {
-        return 'usuario';
-    }  
+ 
     
     protected function authenticated(Request $request, $user)
     {
@@ -39,4 +35,8 @@ class LoginController extends Controller
         }
     }
 
+    public function username()
+    {
+        return 'usuario';
+    } 
 }

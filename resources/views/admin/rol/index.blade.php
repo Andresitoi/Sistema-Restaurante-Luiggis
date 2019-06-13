@@ -3,6 +3,14 @@
     Sistema Rol
 @endsection
 
+@section('styles')
+<link href="{{asset("assets/js/jquery-nestable/jquery.nestable.css")}}" rel="stylesheet" type="text/css"/>
+@endsection
+
+@section('scriptsPlugins')
+<script src="{{asset("assets/js/jquery-nestable/jquery.nestable.js")}}" type="text/javascript"></script>
+@endsection
+
 @section('scripts')
 <script src="{{asset("assets/pages/scripts/admin/index.js")}}" type="text/javascript"></script>
 @endsection
