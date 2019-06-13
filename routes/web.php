@@ -34,14 +34,18 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' =>['auth
     Route::get('menu','MenuController@index')->name('menu'); 
     Route::get('menu/crear','MenuController@crear')->name('crear_menu'); 
     Route::post('menu','MenuController@guardar')->name('guardar_menu'); 
-    Route::post('menu/guardar-orden','MenuController@guardarOrden')->name('guardar_orden'); 
+    Route::get('menu/modificar','MenuController@modificar')->name('modificar');
+    Route::post('menu/guardar-orden','MenuController@guardarOrden')->name('guardar_orden');
+    Route::get('menu/{id}/editar','MenuController@editar')->name('editar_menu');
+    Route::put('menu/{id}','MenuController@actualizar')->name('actualizar_menu'); 
+    Route::delete('menu/{id}', 'MenuController@eliminar')->name('eliminar_menu');  
     
     /**RUTAS DEL ROL*/
     Route::get('rol','RolController@index')->name('rol'); 
     Route::get('rol/crear','RolController@crear')->name('crear_rol');
+    Route::post('rol','RolController@guardar')->name('guardar_rol');
     Route::get('rol/{id}/editar','RolController@editar')->name('editar_rol');
-    Route::put('rol/{id}','RolController@actualizar')->name('actualizar_rol');
-    Route::post('rol','RolController@guardar')->name('guardar_rol'); 
+    Route::put('rol/{id}','RolController@actualizar')->name('actualizar_rol'); 
     Route::delete('rol/{id}', 'RolController@eliminar')->name('eliminar_rol'); 
 
     /**RUTAS DEL MENU-ROL */

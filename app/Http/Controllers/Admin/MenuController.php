@@ -29,6 +29,11 @@ class MenuController extends Controller
     {
         return view('admin.menu.crear');
     }
+    public function modificar()
+    {
+        $menus = Menu::orderBy('id')->get();
+        return view('admin.menu.modificar',compact('menus'));
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -61,7 +66,8 @@ class MenuController extends Controller
      */
     public function editar($id)
     {
-        //
+        $data = Menu::findOrFail($id);
+        return view('admin/menu/editar',compact('data'));
     }
 
     /**
@@ -71,8 +77,9 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function actualizar(Request $request, $id)
+    public function actualizar(ValidacionMenu $request, $id)
     {
+        Menu::findOrFail($id)->update($request->all());
         return redirect('admin/menu')->with('mensaje','menú Actualizado con éxito');
     }
 
@@ -83,8 +90,16 @@ class MenuController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function eliminar($id)
-    {
-        //
+    {    
+        if ($request->ajax()) {
+            if (Menu::destroy($id)) {
+                return response()->json(['mensaje' => 'ok']);
+            }else{
+                return response()->json(['mensaje' => 'ng']);
+            }
+        }else{
+            abort(404);
+        }
     }
 
     public function guardarOrden(Request $request)

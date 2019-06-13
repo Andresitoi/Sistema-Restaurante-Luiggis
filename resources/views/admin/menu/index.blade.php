@@ -1,6 +1,6 @@
 @extends("theme.$theme.layout")
 @section('titulo')
-    Menus
+    Sistema Menu
 @endsection
 
 @section('styles')
@@ -22,6 +22,14 @@
         <div class="box box-succes">
             <div class="box-header with-border">
                 <h3 class="box-title">menús</h3>
+                <div class="box-tools pull-right box-tools">
+                    <a href="{{route('crear_menu')}}" class="btn margin-r-5 btn-success btn-sm">
+                        <i class="fa fa-fw fa-plus-circle"></i>Nuevo Menu
+                    </a> 
+                    <a href="{{route('modificar')}}" class="btn margin-r-5 btn-danger btn-sm">
+                            <i class=""></i>Modificar
+                    </a> 
+                </div>              
             </div> 
             <div class="box-body">
                 @csrf
@@ -35,7 +43,8 @@
                         @endforeach
                     </ol>
                 </div>
-          </div>
+            </div>
+            
         </div>
       </div>
     </div>
