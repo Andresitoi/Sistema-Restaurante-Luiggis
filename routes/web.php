@@ -52,4 +52,21 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' =>['auth
     Route::get('menu-rol','MenuRolController@index')->name('menu_rol');
     Route::post('menu-rol','MenuRolController@guardar')->name('guardar_menu_rol');
 
+    
+    /**RUTAS DEL PERMISO-ROL */
+    Route::get('permiso-rol','PermisoRolController@index')->name('permiso_rol');
+    Route::post('permiso-rol','PermisoRolController@guardar')->name('guardar_permiso_rol');
+
+    
+    /**RUTAS DEL INSUMO */
+    Route::get('insumo','InsumoController@index')->name('insumo');
+
+});
+
+
+Route::group(['prefix' => 'almacen', 'namespace' => 'Almacen', 'middleware' =>['auth','superadmin']], function () {
+
+    /**RUTAS DEL INSUMO */
+    Route::get('insumo','InsumoController@index')->name('insumo');
+    Route::get('insumo/crear','InsumoController@crear')->name('crear_insumo');
 });

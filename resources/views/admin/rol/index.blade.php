@@ -32,6 +32,7 @@
                 <table class="table table-striped table-bordered table-hover" id="tabla-data">
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Nombre</th>
                             <th class="width70"></th>
                         </tr>
@@ -39,6 +40,7 @@
                     <tbody>
                         @foreach ($datas as $data)
                             <tr>
+                                <td>{{$data->id}}</td>
                                 <td>{{$data->nombre}}</td>
                                 <td>                                    
                                     <a href="{{route('editar_rol',['id'=>$data->id])}}" class="btn-accion-tabla tooltipsC" title="Editar este registro">
